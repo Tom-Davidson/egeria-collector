@@ -1,6 +1,8 @@
 machine:
   node:
     version: 5.11.1
+  environment:
+    PORT: 8443
 dependencies:
   override:
     - npm install
