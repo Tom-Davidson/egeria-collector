@@ -1,0 +1,26 @@
+{
+  "name": "egeria-collector",
+  "version": "0.9.0",
+  "description": "The collector for the Egeria project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Warning: No unit tests\" && lab -c test/integration.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom-Davidson/egeria-collector.git"
+  },
+  "author": "Tom Davidson <tom@davidson.me.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tom-Davidson/egeria-collector/issues"
+  },
+  "homepage": "https://github.com/Tom-Davidson/egeria-collector#readme",
+  "dependencies": {
+    "code": "^3.0.1",
+    "dotenv": "^2.0.0",
+    "hapi": "^13.4.2",
+    "lab": "^10.8.2"
+  }
+}
