@@ -1,6 +1,7 @@
 # Generated Files
 node_modules/
 npm-debug.log
+newrelic_agent.log
 
 # Environmental
 .env
