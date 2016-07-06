@@ -2,6 +2,9 @@
   "name": "egeria-collector",
   "version": "0.9.0",
   "description": "The collector for the Egeria project.",
+  "engines": {
+    "node": "5.11.1"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Warning: No unit tests\" && lab -c test/integration.js",
