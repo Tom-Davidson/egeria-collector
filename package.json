@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Warning: No unit tests\" && lab -c test/integration.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev-generatecerts": "openssl req -x509 -days 365 -nodes -newkey rsa:1024 -keyout key.pem -out cert.pem"
   },
   "repository": {
     "type": "git",

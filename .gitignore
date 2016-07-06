@@ -1,5 +1,7 @@
 # Generated Files
 node_modules/
+cert.pem
+key.pem
 npm-debug.log
 newrelic_agent.log
 
