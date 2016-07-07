@@ -1,8 +1,8 @@
 "use strict";
 
 require('newrelic');
-const Hapi = require('hapi');
-const fs = require('fs');
+const Hapi = require('hapi'),
+        fs = require('fs');
 require('dotenv').config({silent: true});
 
 const server = new Hapi.Server();
