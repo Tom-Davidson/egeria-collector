@@ -2,6 +2,7 @@ machine:
   node:
     version: 5.11.1
   environment:
+    HOSTNAME: localhost
     PORT: 8443
 dependencies:
   override:

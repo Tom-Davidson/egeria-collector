@@ -1,5 +1,5 @@
 'use strict'
-
+const fs = require('fs');
 /**
  * New Relic agent configuration.
  *
@@ -22,5 +22,8 @@ exports.config = {
      * production applications.
      */
     level: 'trace'
-  }
+  },
+  host: 'localhost',
+  port: 8443,
+  certificates: [ fs.readFileSync('cert.pem', {encoding: 'utf8'}) ]
 }
