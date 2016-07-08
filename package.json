@@ -7,7 +7,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "lint": "eslint server.js src/ test/ && jsinspect server.js src/ test/",
+    "lint": "eslint server.js src/ test/ && jsinspect server.js src/",
     "test": "echo \"Warning: No unit tests\" && lab -c test/integration.js",
     "start": "node server.js",
     "dev-generatesslcerts": "openssl req -x509 -days 365 -nodes -newkey rsa:1024 -subj \"/C=US/ST=Denial/L=Springfield/O=Dis/CN=localhost\" -keyout key.pem -out cert.pem"
