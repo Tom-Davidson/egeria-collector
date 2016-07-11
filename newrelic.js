@@ -24,6 +24,11 @@ exports.config = {
     level: 'trace'
   },
   host: 'localhost',
-  port: 8443,
-  certificates: [ fs.readFileSync('cert.pem', {encoding: 'utf8'}) ]
+  port: 8443
 }
+
+try{
+  fs.accessSync('cert.pem', fs.R_OK);
+  exports.config.certificates = [ fs.readFileSync('cert.pem', {encoding: 'utf8'}) ]
+  console.log('Imported custom cert into NewRelic config.');
+}catch(e){ }
