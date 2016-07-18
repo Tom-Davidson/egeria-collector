@@ -1,5 +1,6 @@
 # Egeria Collector
 [![CircleCI](https://circleci.com/gh/Tom-Davidson/egeria-collector.svg?style=svg)](https://circleci.com/gh/Tom-Davidson/egeria-collector)
+[![Dependency Status](https://dependencyci.com/github/Tom-Davidson/egeria-collector/badge)](https://dependencyci.com/github/Tom-Davidson/egeria-collector)
 
 [Egeria](https://en.wikipedia.org/wiki/Egeria_(deity)) forms a link between your APM requirements to your analytics tools. The collector acts as a replacement endpoint for your (New Relic)[https://newrelic.com/] agent and push the data down into your analytics pipeline.
 
