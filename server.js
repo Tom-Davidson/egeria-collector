@@ -56,7 +56,6 @@ server.route({
       },
     },
     handler: function (request, reply) {
-      console.log(request.query.method);
       let command = { exec: function() {} }
       switch(request.query.method){
         case 'get_redirect_host':
@@ -66,6 +65,10 @@ server.route({
         case 'connect':
           command = require('./src/new_relic_commands/connect');
           return reply(command.exec(request.payload[0]));
+          break;
+        case 'agent_settings':
+          command = require('./src/new_relic_commands/agent_settings');
+          return reply(command.exec(request.query.license_key));
           break;
         default:
           command = require('./src/new_relic_commands/unknown');
