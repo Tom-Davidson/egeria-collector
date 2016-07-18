@@ -13,6 +13,7 @@ describe('new_relic_commands/connect', function() {
     expect(typeof result).to.equal('object');
     expect(typeof result.return_value).to.equal('object');
     expect(typeof result.return_value.agent_run_id).to.equal('string');
-    expect(result.return_value.agent_run_id).to.equal('agentRunId');
+    expect(result.return_value.agent_run_id.length).to.equal(18);
+    expect(result.return_value.agent_run_id).to.equal('123456789012345678');
   });
 });

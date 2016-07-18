@@ -51,10 +51,12 @@ server.route({
         marshal_format: Joi.string().max(40).min(2).alphanum(),
         protocol_version: Joi.number().min(14).max(14),
         license_key: Joi.string().length(40).alphanum(),
-        method: Joi.string().regex(/[a-z\_]+/)
+        method: Joi.string().regex(/[a-z\_]+/),
+        run_id: Joi.string().length(18).alphanum().optional()
       },
     },
     handler: function (request, reply) {
+      console.log(request.query.method);
       let command = { exec: function() {} }
       switch(request.query.method){
         case 'get_redirect_host':
