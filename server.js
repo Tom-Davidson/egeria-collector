@@ -70,6 +70,10 @@ server.route({
           command = require('./src/new_relic_commands/agent_settings');
           return reply(command.exec(request.query.license_key));
           break;
+        case 'metric_data':
+          command = require('./src/new_relic_commands/metric_data');
+          return reply(command.exec());
+          break;
         default:
           command = require('./src/new_relic_commands/unknown');
           return reply(command.exec(request.query.method));
