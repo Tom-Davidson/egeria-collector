@@ -74,16 +74,19 @@ server.route({
       },
     },
     handler: function (request, reply) {
+      let command = { exec: function() {} }
       switch(request.query.method){
         case 'get_redirect_host':
-          const command = require('./src/new_relic_commands/get_redirect_host');
+          command = require('./src/new_relic_commands/get_redirect_host');
           return reply(command.exec());
           break;
+        case 'connect':
+          command = require('./src/new_relic_commands/connect');
+          return reply(command.exec(request.payload[0]));
+          break;
         default:
-          console.log("Unknown method '" + request.query.method + "' in POST to /agent_listener/invoke_raw_method");
-          return reply({
-            error: "Unknown method"
-          });
+          command = require('./src/new_relic_commands/unknown');
+          return reply(command.exec(request.query.method));
           break;
       }
     }
