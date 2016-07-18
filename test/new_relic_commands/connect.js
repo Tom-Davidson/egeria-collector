@@ -11,7 +11,8 @@ describe('new_relic_commands/connect', function() {
   it('returns an object with a agent_run_id', function() {
     result = command.exec(payload);
     expect(typeof result).to.equal('object');
-    expect(typeof result.agent_run_id).to.equal('string');
-    expect(result.agent_run_id).to.equal('agentRunId');
+    expect(typeof result.return_value).to.equal('object');
+    expect(typeof result.return_value.agent_run_id).to.equal('string');
+    expect(result.return_value.agent_run_id).to.equal('agentRunId');
   });
 });

@@ -1,7 +1,9 @@
 module.exports = {
   exec: function(request_payload) {
     return {
-      agent_run_id: 'agentRunId'
+      return_value: {
+        agent_run_id: 'agentRunId'
+      }
     }
   }
 }
