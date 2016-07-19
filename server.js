@@ -74,6 +74,10 @@ server.route({
           command = require('./src/new_relic_commands/metric_data');
           return reply(command.exec());
           break;
+        case 'analytic_event_data':
+          command = require('./src/new_relic_commands/analytic_event_data');
+          return reply(command.exec());
+          break;
         default:
           command = require('./src/new_relic_commands/unknown');
           return reply(command.exec(request.query.method));
