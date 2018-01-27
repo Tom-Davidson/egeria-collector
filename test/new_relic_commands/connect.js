@@ -9,7 +9,7 @@ describe('new_relic_commands/connect', function() {
     expect(typeof command.exec).to.equal('function');
   });
   it('returns an object with a agent_run_id', function() {
-    result = command.exec(payload);
+    const result = command.exec(payload);
     expect(typeof result).to.equal('object');
     expect(typeof result.return_value).to.equal('object');
     expect(typeof result.return_value.agent_run_id).to.equal('string');

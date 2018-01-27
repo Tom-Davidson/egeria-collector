@@ -1,9 +1,9 @@
 "use strict";
 
 require('newrelic');
-const Hapi = require('hapi'),
-       Joi = require('joi'),
-        fs = require('fs');
+const fs = require('fs');
+const Hapi = require('hapi');
+const Joi = require('joi');
 require('dotenv').config({silent: true});
 
 const server = new Hapi.Server();
@@ -16,7 +16,7 @@ try{
       cert: fs.readFileSync(__dirname + '/cert.pem', 'utf8')
     }
   });
-  console.log('Found ssl certificates, starting as https');
+  process.stdout.write("Found ssl certificates, starting as https\n");
 }catch(e){
   server.connection({
     host: '0.0.0.0',
@@ -29,7 +29,7 @@ server.route({
     method: '*',
     path: '/{p*}', // catch-all path
     handler: function (request, reply) {
-      console.log('404');
+      process.stdout.write("404\n");
       reply({"error":404});
     }
 });
@@ -61,27 +61,27 @@ server.route({
         case 'get_redirect_host':
           command = require('./src/new_relic_commands/get_redirect_host');
           return reply(command.exec());
-          break;
+          // break;
         case 'connect':
           command = require('./src/new_relic_commands/connect');
           return reply(command.exec(request.payload[0]));
-          break;
+          // break;
         case 'agent_settings':
           command = require('./src/new_relic_commands/agent_settings');
           return reply(command.exec(request.query.license_key));
-          break;
+          // break;
         case 'metric_data':
           command = require('./src/new_relic_commands/metric_data');
           return reply(command.exec());
-          break;
+          // break;
         case 'analytic_event_data':
           command = require('./src/new_relic_commands/analytic_event_data');
           return reply(command.exec());
-          break;
+          // break;
         default:
           command = require('./src/new_relic_commands/unknown');
           return reply(command.exec(request.query.method));
-          break;
+          // break;
       }
     }
   }
@@ -91,6 +91,6 @@ server.start((err) => {
   if (err) {
     throw err;
   }
-  console.log('Server running at:', server.info.uri, ' / ', process.env.HOSTNAME + ':' + process.env.PORT);
+  process.stdout.write('Server running at:' + server.info.uri + "\n");
 });
 module.exports = server;

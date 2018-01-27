@@ -1,7 +1,12 @@
 {
-  "parser": "babel-eslint",
+  "plugins": ["node", "chai-expect"],
+  "extends": ["eslint:recommended", "plugin:node/recommended"],
   "env": {
     "browser": false,
-    "node": true
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+      "node/exports-style": ["error", "module.exports"]
   }
 }

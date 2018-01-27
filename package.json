@@ -3,14 +3,14 @@
   "version": "0.9.0",
   "description": "The collector for the Egeria project.",
   "engines": {
-    "node": "5.11.1"
+    "node": "8.9.4"
   },
   "main": "server.js",
   "scripts": {
     "lint": "eslint server.js src/ test/ && jsinspect server.js src/",
     "test": "npm run test-unit && npm run test-integration",
     "test-unit": "mocha test/**/*.js",
-    "test-integration": "lab -c test/integration.js",
+    "test-integration": "lab -c --leaks test/integration.js",
     "start": "node server.js",
     "dev-generatesslcerts": "openssl req -x509 -days 365 -nodes -newkey rsa:1024 -subj \"/C=US/ST=Denial/L=Springfield/O=Dis/CN=localhost\" -keyout key.pem -out cert.pem"
   },
@@ -28,13 +28,16 @@
     "code": "^3.0.1",
     "dotenv": "^2.0.0",
     "hapi": "^13.4.2",
+    "joi": "^13.1.1",
     "lab": "^10.8.2",
     "newrelic": "^1.28.1"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.0",
     "chai": "^3.5.0",
-    "eslint": "^3.0.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-chai-expect": "^1.1.1",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-node": "^5.2.1",
     "jsinspect": "^0.8.0",
     "mocha": "^2.5.3"
   }

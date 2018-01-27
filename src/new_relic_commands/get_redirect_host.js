@@ -1,7 +1,9 @@
+var os = require("os");
+
 module.exports = {
   exec: function() {
     return {
-      return_value: process.env.HOSTNAME
+      return_value: os.hostname()
     }
   }
 }
