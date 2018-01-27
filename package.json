@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "description": "The collector for the Egeria project.",
   "engines": {
-    "node": "5.11.1"
+    "node": "8.9.4"
   },
   "main": "server.js",
   "scripts": {
