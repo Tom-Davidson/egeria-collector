@@ -91,6 +91,6 @@ server.start((err) => {
   if (err) {
     throw err;
   }
-  console.log('Server running at:', server.info.uri, ' / ', process.env.HOSTNAME + ':' + process.env.PORT);
+  console.log('Server running at:', server.info.uri);
 });
 module.exports = server;
