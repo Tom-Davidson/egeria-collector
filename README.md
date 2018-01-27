@@ -13,6 +13,7 @@
 ## Contributing
  - Fork the repo
  - Clone locally
+ - Set up your env vars or use .env for a quick-start: `ln -s .env-example .env`
  - Install dependancies: `npm install`
  - Generate a self-signed ssl certificate: `npm run dev-generatesslcerts`
  - Run tests `npm test`
