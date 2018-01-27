@@ -8,7 +8,7 @@ describe('new_relic_commands/unknown', function() {
     expect(typeof command.exec).to.equal('function');
   });
   it('returns an object with an error', function() {
-    result = command.exec('myMethod');
+    const result = command.exec('myMethod');
     expect(typeof result).to.equal('object');
     expect(typeof result.error).to.equal('string');
     expect(result.error).to.equal('Unknown method: myMethod');

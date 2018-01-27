@@ -9,8 +9,7 @@ describe('new_relic_commands/get_redirect_host', function() {
     expect(typeof command.exec).to.equal('function');
   });
   it('returns an object with a host', function() {
-    result = command.exec();
-    console.log(result);
+    const result = command.exec();
     expect(typeof result).to.equal('object');
     expect(typeof result.return_value).to.equal('string');
     expect(result.return_value).to.equal(os.hostname());

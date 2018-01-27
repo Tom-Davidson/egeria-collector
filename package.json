@@ -28,13 +28,16 @@
     "code": "^3.0.1",
     "dotenv": "^2.0.0",
     "hapi": "^13.4.2",
+    "joi": "^13.1.1",
     "lab": "^10.8.2",
     "newrelic": "^1.28.1"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.0",
     "chai": "^3.5.0",
-    "eslint": "^3.0.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-chai-expect": "^1.1.1",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-node": "^5.2.1",
     "jsinspect": "^0.8.0",
     "mocha": "^2.5.3"
   }

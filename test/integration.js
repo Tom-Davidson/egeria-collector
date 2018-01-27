@@ -1,5 +1,5 @@
 var Lab = require("lab");             // lab testing framework
-var lab = exports.lab = Lab.script(); // export test script
+var lab = module.exports.lab = Lab.script(); // export test script
 var Code = require("code");           // assertion library
 var server = require("../server.js"); // our app
 

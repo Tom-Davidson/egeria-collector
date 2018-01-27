@@ -7,7 +7,7 @@ describe('new_relic_commands/metric_data', function() {
     expect(typeof command.exec).to.equal('function');
   });
   it('returns an object wrapped in an array', function() {
-    result = command.exec('myLicenceKey');
+    const result = command.exec('myLicenceKey');
     expect(typeof result).to.equal('object');
     expect(typeof result.return_value).to.equal('object');
     expect(result.return_value instanceof Array).to.equal(true);
