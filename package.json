@@ -10,7 +10,7 @@
     "lint": "eslint server.js src/ test/ && jsinspect server.js src/",
     "test": "npm run test-unit && npm run test-integration",
     "test-unit": "mocha test/**/*.js",
-    "test-integration": "lab -c test/integration.js",
+    "test-integration": "lab -c --leaks test/integration.js",
     "start": "node server.js",
     "dev-generatesslcerts": "openssl req -x509 -days 365 -nodes -newkey rsa:1024 -subj \"/C=US/ST=Denial/L=Springfield/O=Dis/CN=localhost\" -keyout key.pem -out cert.pem"
   },
