@@ -1,3 +1,4 @@
+var os = require("os");
 const expect = require("chai").expect;
 require('dotenv').config({silent: true});
 
@@ -9,8 +10,9 @@ describe('new_relic_commands/get_redirect_host', function() {
   });
   it('returns an object with a host', function() {
     result = command.exec();
+    console.log(result);
     expect(typeof result).to.equal('object');
     expect(typeof result.return_value).to.equal('string');
-    expect(result.return_value).to.equal(process.env.HOSTNAME);
+    expect(result.return_value).to.equal(os.hostname());
   });
 });
