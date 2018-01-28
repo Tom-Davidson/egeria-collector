@@ -1,9 +1,10 @@
-var os = require("os");
+const logger = require('../logger');
 
 module.exports = {
-  exec: function() {
+  exec: function(request) {
+    logger.debug(request.query.method + ' called');
     return {
-      return_value: os.hostname()
+      return_value: process.env.HOSTNAME+':'+process.env.PORT
     }
   }
 }

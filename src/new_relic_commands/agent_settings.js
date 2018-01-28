@@ -1,9 +1,10 @@
+const logger = require('../logger');
+
 module.exports = {
-  exec: function(license_key) {
-    return [
-      {
-        license_key: license_key
-      }
-    ];
+  exec: function(request) {
+    logger.debug(request.query.method + ' called');
+    return {
+      return_value: null
+    };
   }
 }

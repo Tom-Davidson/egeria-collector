@@ -8,6 +8,7 @@
  - Clone the repo: `https://github.com/Tom-Davidson/egeria-collector.git`
  - Install dependancies: `npm install`
  - add your ssl certificates as `key.pem` and `cert.pem`
+ - Add your env vars (see `.env-example` for what to set, ensure HOSTNAME is the name signed on your cert)
  - Start the service: `npm start`
 
 ## Contributing

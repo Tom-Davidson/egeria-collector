@@ -7,10 +7,11 @@ describe('new_relic_commands/agent_settings', function() {
     expect(typeof command.exec).to.equal('function');
   });
   it('returns an object wrapped in an array', function() {
-    const result = command.exec('myLicenceKey');
+    const result = command.exec({
+      query:{method:'agent_settings'}
+    });
     expect(typeof result).to.equal('object');
-    expect(typeof result[0]).to.equal('object');
-    expect(typeof result[0].license_key).to.equal('string');
-    expect(result[0].license_key).to.equal('myLicenceKey');
+    expect(typeof result.return_value).to.equal('object');
+    expect(result.return_value).to.equal(null);
   });
 });
