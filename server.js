@@ -7,7 +7,6 @@ require('dotenv').config({silent: true});
 const logger = require('./src/logger');
 
 const server = new Hapi.Server({
-  host: '0.0.0.0',
   port: parseInt(process.env.PORT, 10) || 443,
   tls: {
     key: fs.readFileSync(__dirname + '/key.pem', 'utf8'),
