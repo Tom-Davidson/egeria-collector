@@ -19,6 +19,6 @@ function _log(level, message){
     || (process.env.NODE_ENV == 'test' && level >= logger.level.INFO)
     || (process.env.NODE_ENV == 'dev' && level >= logger.level.DEBUG)
   ){
-    process.stdout.write(message);
+    process.stdout.write(message+"\n");
   }
 }
