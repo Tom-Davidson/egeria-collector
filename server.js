@@ -19,7 +19,7 @@ server.route({
     method: '*',
     path: '/{p*}', // catch-all path
     handler: function (request) {
-      logger.debug('404, no route for ' + request.url + "\n");
+      logger.debug('404, no route for ' + request.url.path);
       // console.log('URL: ', request.url);
       // console.log('Headers: ', request.headers);
       // console.log('Payload: ', request.payload);
@@ -65,7 +65,7 @@ server.route({
       },
     },
     handler: function (request) {
-      logger.info('NR Route: ' + request.query.method + "\n");
+      logger.info('NR Route: ' + request.query.method);
       if(commandMap.hasOwnProperty(request.query.method)){
         return commandMap[request.query.method].exec(request);
       }else{
@@ -78,10 +78,10 @@ server.route({
 server
   .start()
   .then(() => {
-    logger.info('Server running at:' + server.info.uri + "\n");
+    logger.info('Server running at:' + server.info.uri);
   })
   .catch(err => {
-    logger.error(err + "\n");
+    logger.error('ERROR: ' + err);
   })
 module.exports = server;
 
