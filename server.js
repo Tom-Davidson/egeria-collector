@@ -61,7 +61,7 @@ server.route({
         protocol_version: Joi.number().min(14).max(14),
         license_key: Joi.string().length(40).alphanum(),
         method: Joi.string().regex(/[a-z_]+/),
-        run_id: Joi.string().length(18).alphanum().optional()
+        run_id: Joi.string().alphanum().optional()
       },
     },
     handler: function (request) {
