@@ -18,10 +18,10 @@ describe('new_relic_commands/connect', function() {
           license_key: 'ABCDEF',
           run_id: null
         },
-        date: new Date('2021-01-02T12:34:56.789Z') // dependancy injection for testing
+        timestamp: new Date('2021-01-02T12:34:56.789Z').getTime() // dependancy injection for testing
       }]
     })
-    const run_id = '83100218b7082a8284ed1d1ff58ef98effbdf070280d04924f139c3a95163c55'
+    const run_id = '7ff92332cf2c51bb55c8d49802165e8a90ea97171fd34559f29de6c17e6f92f4'
     expect(typeof result).to.equal('object')
     expect(typeof result.return_value).to.equal('object')
     expect(typeof result.return_value.agent_run_id).to.equal('string')

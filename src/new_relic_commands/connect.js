@@ -10,7 +10,7 @@ module.exports = {
         request.payload[0].host,
         request.payload[0].pid,
         request.payload[0].app_name[0],
-        request.payload[0].date // never passed by the agent so == null, just for testing
+        request.payload[0].timestamp // never passed by the agent so == null, just for testing
       )
     )
     const app_run = {
@@ -32,7 +32,7 @@ module.exports = {
   }
 }
 
-function generateRunID(host, pid, app, date = new Date()){
+function generateRunID(host, pid, app, timestamp = new Date().getTime()){
   /*
   Examples:
   WzIse2E6MTkxMTE3NzA0NyxiOjEwNjExMDAwOSxjOjE0ODA3NCxkOiIyLjYuMSIsZToibm9kZWpzIixmOiJUb21zLU1hY0Jvb2stUHJvLTIubG9jYWwiLGc6W3thOjI4NjgwODE5LGI6IkVnZXJpYSBDb2xsZWN0b3IifV19LDQwMjYzMDEwMDdd
@@ -42,8 +42,7 @@ function generateRunID(host, pid, app, date = new Date()){
   */
   // process.hrtime() is more nanoseconds but the actual timestamp
   const hash = crypto.createHash('sha256')
-  console.log('['+host+':'+pid+'/'+app+'?'+date+']')
-  hash.update(host+':'+pid+'/'+app+'?'+date)
+  hash.update(host+':'+pid+'/'+app+'?'+timestamp)
   const run_id = hash.digest('hex').replace(/\W/g, '')
   return run_id
 }
