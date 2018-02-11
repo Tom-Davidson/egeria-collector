@@ -40,8 +40,9 @@ function generateRunID(host, pid, app, date = new Date()){
   WzIse2E6MTkxMTE5NDE5MSxiOjEwNjExMDAwOSxjOjE0ODA3NCxkOiIyLjYuMSIsZToibm9kZWpzIixmOiJUb21zLU1hY0Jvb2stUHJvLTIubG9jYWwiLGc6W3thOjI4NjgwODE5LGI6IkVnZXJpYSBDb2xsZWN0b3IifV19LDI2MjE2NTc1Nzhd
   WzIse2E6MTkxMTIyNTY1NCxiOjEwNjExMDAwOSxjOjE0ODA3NCxkOiIyLjYuMSIsZToibm9kZWpzIixmOiJUb21zLU1hY0Jvb2stUHJvLTIubG9jYWwiLGc6W3thOjI4NjgwODE5LGI6IkVnZXJpYSBDb2xsZWN0b3IifV19LDM2MTA5OTM1Mzld
   */
-  // const time = new Date() // process.hrtime() is more nanoseconds but the actual timestamp
+  // process.hrtime() is more nanoseconds but the actual timestamp
   const hash = crypto.createHash('sha256')
+  console.log('['+host+':'+pid+'/'+app+'?'+date+']')
   hash.update(host+':'+pid+'/'+app+'?'+date)
   const run_id = hash.digest('hex').replace(/\W/g, '')
   return run_id
