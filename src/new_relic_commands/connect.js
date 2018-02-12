@@ -24,6 +24,7 @@ module.exports = {
         license_key: request.payload[0].settings.license_key,
       }
     }
+    logger.debug(app_run)
     return {
       return_value: {
         agent_run_id: run_id

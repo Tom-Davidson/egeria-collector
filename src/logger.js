@@ -1,5 +1,5 @@
 // Super naive logger, replace with somethink like bucker
-logger = {
+const logger = {
   level: {
     ERROR: 3,
     WARNING: 2,
