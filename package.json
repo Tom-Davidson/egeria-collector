@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "description": "The collector for the Egeria project.",
   "engines": {
-    "node": "10.7.0"
+    "node": "11.9.0"
   },
   "main": "server.js",
   "scripts": {
@@ -26,19 +26,19 @@
   },
   "homepage": "https://github.com/Tom-Davidson/egeria-collector#readme",
   "dependencies": {
-    "code": "5.1.2",
-    "dotenv": "4.0.0",
-    "hapi": "17.2.0",
-    "joi": "13.1.1",
-    "lab": "15.2.0",
-    "newrelic": "2.6.1"
+    "code": "5.2.4",
+    "dotenv": "6.2.0",
+    "hapi": "18.1.0",
+    "joi": "14.3.1",
+    "lab": "18.0.2",
+    "newrelic": "5.3.0"
   },
   "devDependencies": {
-    "chai": "4.1.2",
-    "eslint": "4.16.0",
-    "eslint-plugin-chai-expect": "1.1.1",
-    "eslint-plugin-mocha": "4.11.0",
-    "eslint-plugin-node": "5.2.1",
+    "chai": "4.2.0",
+    "eslint": "5.13.0",
+    "eslint-plugin-chai-expect": "2.0.1",
+    "eslint-plugin-mocha": "5.3.0",
+    "eslint-plugin-node": "8.0.1",
     "jsinspect": "0.12.7",
     "mocha": "5.2.0"
   }
